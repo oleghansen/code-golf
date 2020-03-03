@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/cx-code-golf",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

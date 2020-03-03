@@ -1,0 +1,18 @@
+<div *ngIf="teams?.length > 0">
+  Team:
+  <select [(ngModel)]="selectedTeam">
+    <option *ngFor="let team of teams">
+      {{ team.name }}
+    </option>
+  </select>
+  Task:
+  <select [(ngModel)]="selectedTask">
+    <option *ngFor="let task of tasks">
+      {{ task }}
+    </option>
+  </select>
+  Length:
+  <input [(ngModel)]="solutionLength" type="number"/>
+
+  <button type="button" (click)="submitScore()">Submit score</button>
+</div>

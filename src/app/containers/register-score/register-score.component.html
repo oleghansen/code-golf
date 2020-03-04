@@ -12,7 +12,7 @@
     </option>
   </select>
   Length:
-  <input [(ngModel)]="solutionLength" type="number"/>
+  <input [(ngModel)]="solutionLength" type="number" pattern="\d*"/>
 
   <button type="button" (click)="submitScore()">Submit score</button>
 </div>

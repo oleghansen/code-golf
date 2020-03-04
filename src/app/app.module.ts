@@ -11,6 +11,7 @@ import { ScoreComponent } from './containers/score/score.component';
 import { NewTeamComponent } from './containers/new-team/new-team.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterScoreComponent } from './containers/register-score/register-score.component';
+import { OrderByPipe } from './thingamabob/OrderByPipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RegisterScoreComponent } from './containers/register-score/register-sco
     AppComponent,
     ScoreComponent,
     NewTeamComponent,
-    RegisterScoreComponent
+    RegisterScoreComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

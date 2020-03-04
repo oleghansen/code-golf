@@ -1,4 +1,27 @@
 <title>CG - Scoreboard</title>
-<div *ngFor="let team of teams">
-  {{ team.name }} has points like for task 1: {{ team.task1length }} points
+<h1>Task 1</h1>
+<div *ngFor="let team of teams | orderBy:'task1length': 'asc'">
+  {{ team.name }} : {{ team.task1length }}
 </div>
+<h1>Task 2</h1>
+<div *ngFor="let team of teams | orderBy:'task2length': 'asc'">
+  {{ team.name }} : {{ team.task2length }}
+</div>
+<h1>Task 3</h1>
+<div *ngFor="let team of teams | orderBy:'task3length': 'asc'">
+  {{ team.name }} : {{ team.task3length }}
+</div>
+<h1>Task 4</h1>
+<div *ngFor="let team of teams | orderBy:'task4length': 'asc'">
+  {{ team.name }} : {{ team.task4length }}
+</div>
+<h1>Task 5</h1>
+<div *ngFor="let team of teams | orderBy:'task5length': 'asc'">
+  {{ team.name }} : {{ team.task5length }}
+</div>
+<h1>Task 6</h1>
+<div *ngFor="let team of teams | orderBy:'task6length': 'asc'">
+  {{ team.name }} : {{ team.task6length }}
+</div>
+<h1>Score</h1>
+

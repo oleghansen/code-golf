@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Team } from 'src/app/models/team.model';
 import { TeamService } from 'src/app/services/team.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Score } from 'src/app/models/score.model';
 
 @Component({
   selector: 'app-score',
@@ -12,6 +13,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ScoreComponent implements OnInit {
   teams$: Observable<Team[]>;
   teams: Team[];
+  scores: Score[];
 
   constructor(private teamService: TeamService, private firestore: AngularFirestore) { }
 

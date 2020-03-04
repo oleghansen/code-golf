@@ -11,10 +11,10 @@ import { Team } from 'src/app/models/team.model';
 export class RegisterScoreComponent implements OnInit {
 
   teams: Team[];
-  tasks = ['Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6'];
+  tasks = [1, 2, 3, 4, 5, 6];
 
-  selectedTeam: Team;
-  selectedTask: string;
+  selectedTeam: string;
+  selectedTask: number;
   solutionLength: number;
 
   constructor(private teamService: TeamService, private firestore: AngularFirestore) { }
@@ -34,6 +34,7 @@ export class RegisterScoreComponent implements OnInit {
   submitScore() {
     if (!!this.selectedTeam && !!this.selectedTask && !!this.solutionLength) {
       console.log('score submitted', this.selectedTeam, this.selectedTask, this.solutionLength);
+      this.teamService.updateLength(this.selectedTeam, this.selectedTask, this.solutionLength);
     }
   }
 }

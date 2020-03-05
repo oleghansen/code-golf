@@ -5,11 +5,11 @@ import { NewTeamComponent } from './containers/new-team/new-team.component';
 import { RegisterScoreComponent } from './containers/register-score/register-score.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: ScoreComponent },
-  { path: 'scores', component: ScoreComponent },
-  { path: 'new-team', component: NewTeamComponent },
-  { path: 'register-score', component: RegisterScoreComponent }
+  { path: 'scores', component: ScoreComponent, data: { animation: 'ScoresPage' }},
+  { path: 'new-team', component: NewTeamComponent, data: { animation: 'NewTeamPage' }},
+  { path: 'register-score', component: RegisterScoreComponent, data: { animation: 'RegisterScorePage' } }
 ];
 
 @NgModule({

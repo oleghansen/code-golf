@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<a class="fr-link" [routerLink]="'new-team'">Legg til lag</a>
+<a class="fr-link" [routerLink]="'scores'">Scores</a>
+<a class="fr-link" [routerLink]="'register-score'">Registrer score</a>
+
+<mat-slide-toggle type="checkbox" (click)="toggleDarkMode()"> Dark mode </mat-slide-toggle>
+
+<div [@routeAnimations]="prepareRoute(outlet)" class="main-content" [ngClass]="{ 'dark-mode' : darkMode }">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

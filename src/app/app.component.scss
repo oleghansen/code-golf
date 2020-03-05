@@ -1,0 +1,20 @@
+.fr-link {
+  margin-top: 20px;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+}
+
+.main-content {
+  padding: 10px;
+  margin: 20px;
+  background-color: lightgray;
+  color: rgb(46, 46, 46);
+  min-height: 80vh;
+  transition: background-color 1s;
+
+  &.dark-mode {
+    background-color: #1E1E1E;
+    color: rgb(255, 255, 255);
+  }
+}

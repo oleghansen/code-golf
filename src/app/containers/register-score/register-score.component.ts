@@ -31,6 +31,14 @@ export class RegisterScoreComponent implements OnInit {
     );
   }
 
+  setTeam(team: Team) {
+    this.selectedTeam = team.name;
+  }
+
+  setTask(task: number) {
+    this.selectedTask = task;
+  }
+
   submitScore() {
     if (!!this.selectedTeam && !!this.selectedTask && !!this.solutionLength) {
       console.log('score submitted', this.selectedTeam, this.selectedTask, this.solutionLength);

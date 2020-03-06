@@ -1,8 +1,9 @@
 <title>CG - Nytt lag</title>
-<p>Legg til lag</p>
-<mat-form-field class="example-full-width">
+
+<h2>Legg til lag</h2>
+<mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }" class="example-full-width">
   <mat-label>Lagnavn</mat-label>
   <input matInput [(ngModel)]="teamName" type="text" />
 </mat-form-field>
 
-<button mat-button color="primary" (click)="addTeam()">Add</button>
+<button mat-button (click)="addTeam()" [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">Add</button>

@@ -1,7 +1,8 @@
 <title>CG - Registrer score</title>
+<h2>Registrer score</h2>
 
 <div *ngIf="teams?.length > 0">
-  <mat-form-field>
+  <mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
     <mat-label>Team</mat-label>
     <mat-select>
       <mat-option *ngFor="let team of teams" [value]="team">
@@ -10,7 +11,7 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
     <mat-label>Task</mat-label>
     <mat-select>
       <mat-option *ngFor="let task of tasks" [value]="task">
@@ -19,10 +20,10 @@
     </mat-select>
   </mat-form-field>
 
-  Length:
-  <mat-form-field>
+  <mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
+    <mat-label>Score</mat-label>
     <input matInput [(ngModel)]="solutionLength" type="number" pattern="\d*"/>
   </mat-form-field>
 
-  <button mat-button type="button" (click)="submitScore()">Submit score</button>
+  <button mat-button type="button" (click)="submitScore()" [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">Submit score</button>
 </div>

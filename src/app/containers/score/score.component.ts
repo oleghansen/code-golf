@@ -4,6 +4,7 @@ import { Team } from 'src/app/models/team.model';
 import { TeamService } from 'src/app/services/team.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Score } from 'src/app/models/score.model';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-score',
@@ -15,7 +16,7 @@ export class ScoreComponent implements OnInit {
   teams: Team[];
   scores: Score[];
 
-  constructor(private teamService: TeamService, private firestore: AngularFirestore) { }
+  constructor(private teamService: TeamService, private themeService: ThemeService, private firestore: AngularFirestore) { }
 
   ngOnInit() {
     this.teamService.getAllTeams().subscribe((res => {
@@ -27,5 +28,9 @@ export class ScoreComponent implements OnInit {
       });
     })
     );
+  }
+
+  isDarkModeEnabled() {
+    return this.themeService.darkMode;
   }
 }

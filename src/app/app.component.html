@@ -1,9 +1,15 @@
-<a class="fr-link" [routerLink]="'new-team'">Legg til lag</a>
-<a class="fr-link" [routerLink]="'scores'">Scores</a>
-<a class="fr-link" [routerLink]="'register-score'">Registrer score</a>
+<mat-toolbar color="primary">
+  <mat-toolbar-row [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
+    <a class="fr-link" [routerLink]="'new-team'">NYTT LAG</a>
+    <a class="fr-link" [routerLink]="'scores'">SCOREBOARD</a>
+    <a class="fr-link" [routerLink]="'register-score'">REGISTRER SCORE</a>
+    <span class="example-spacer"></span>
+    <span flex></span>
+    <mat-slide-toggle class="dark-mode-slider" type="checkbox" (click)="toggleDarkMode()"> Dark mode </mat-slide-toggle>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-<mat-slide-toggle type="checkbox" (click)="toggleDarkMode()"> Dark mode </mat-slide-toggle>
 
-<div [@routeAnimations]="prepareRoute(outlet)" class="main-content" [ngClass]="{ 'dark-mode' : darkMode }">
+<div [@routeAnimations]="prepareRoute(outlet)" class="main-content" [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

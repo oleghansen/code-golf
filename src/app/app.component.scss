@@ -1,20 +1,78 @@
 .fr-link {
-  margin-top: 20px;
+  margin-right: 20px;
   text-decoration: none;
-  color: gray;
+  color: white;
   font-weight: bold;
 }
 
+::ng-deep mat-form-field {
+  &.dark-mode {
+    .mat-form-field-label {
+      color: white !important;
+    }
+    .mat-focused .mat-primary .mat-select-arrow {
+      color: #ff4081;
+    }
+    mat-select{
+      .mat-select-value {
+        color: white;
+      }
+    }
+    .mat-form-field-underline {
+      background-color: white;
+      .mat-form-field-ripple {
+        background-color: #ff4081;
+      }
+    }
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.mat-toolbar-row {
+  &.dark-mode {
+      background: #171719;
+  }
+}
+
 .main-content {
-  padding: 10px;
-  margin: 20px;
+  padding: 20px;
   background-color: lightgray;
   color: rgb(46, 46, 46);
-  min-height: 80vh;
+  height: 100%;
   transition: background-color 1s;
 
   &.dark-mode {
     background-color: #1E1E1E;
     color: rgb(255, 255, 255);
+
+    input {
+      color: white;
+    }
+
+    .mat-form-field {
+      .mat-input-element {
+          color: slategray;
+      }
+      .mat-form-field-label {
+          color: slategray;
+      }
+      .mat-form-field-underline {
+          background-color: slategray;
+      }
+      .mat-form-field-ripple {
+          background-color: slategray;
+      }
+      .mat-form-field-required-marker {
+          color: slategray;
+      }
+    }
   }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

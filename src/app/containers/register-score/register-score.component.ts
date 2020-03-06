@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TeamService } from 'src/app/services/team.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Team } from 'src/app/models/team.model';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-register-score',
@@ -17,7 +18,7 @@ export class RegisterScoreComponent implements OnInit {
   selectedTask: number;
   solutionLength: number;
 
-  constructor(private teamService: TeamService, private firestore: AngularFirestore) { }
+  constructor(private teamService: TeamService, private themeService: ThemeService, private firestore: AngularFirestore) { }
 
   ngOnInit() {
     this.teamService.getAllTeams().subscribe((res => {
@@ -44,5 +45,9 @@ export class RegisterScoreComponent implements OnInit {
       console.log('score submitted', this.selectedTeam, this.selectedTask, this.solutionLength);
       this.teamService.updateLength(this.selectedTeam, this.selectedTask, this.solutionLength);
     }
+  }
+
+  isDarkModeEnabled() {
+    return this.themeService.darkMode;
   }
 }

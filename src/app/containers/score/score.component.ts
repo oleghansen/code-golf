@@ -18,7 +18,12 @@ export class ScoreComponent implements OnInit {
   scores$: Observable<Score[]>;
   scores: Score[];
 
-  constructor(private teamService: TeamService, private themeService: ThemeService, private scoreService: ScoreService, private firestore: AngularFirestore) { }
+  constructor(
+    private teamService: TeamService,
+    private themeService: ThemeService,
+    private scoreService: ScoreService,
+    private firestore: AngularFirestore
+  ) { }
 
   ngOnInit() {
     this.teamService.getAllTeams().subscribe((res => {
@@ -28,18 +33,10 @@ export class ScoreComponent implements OnInit {
           ...team.payload.doc.data()
         } as Team;
       });
+      this.scores = this.scoreService.getAllScores();
+      console.log(this.scores);
     })
     );
-
-    /*this.scoreService.getAllScores().subscribe((res => {
-      this.scores = res.map(score => {
-        return {
-          id: score.payload.doc.id,
-          ...score.payload.doc.data()
-        } as Score;
-      });
-    })
-    );*/
   }
 
   isDarkModeEnabled() {

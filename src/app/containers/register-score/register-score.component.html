@@ -4,7 +4,7 @@
 <div *ngIf="teams?.length > 0">
   <mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
     <mat-label>Team</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="selectedTeam">
       <mat-option *ngFor="let team of teams" [value]="team">
         {{ team.name }}
       </mat-option>
@@ -13,7 +13,7 @@
 
   <mat-form-field [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">
     <mat-label>Task</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="selectedTask">
       <mat-option *ngFor="let task of tasks" [value]="task">
         {{ task }}
       </mat-option>
@@ -26,4 +26,8 @@
   </mat-form-field>
 
   <button mat-button type="button" (click)="submitScore()" [ngClass]="{ 'dark-mode' : isDarkModeEnabled() }">Submit score</button>
+
+  <div *ngIf="teamHasExistingScoreForTask()">
+    Team has already answered this task! Registered score was <strong> {{ getTeamsBestScoreForSelectedTask() }} </strong>
+  </div>
 </div>

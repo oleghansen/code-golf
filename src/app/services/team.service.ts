@@ -17,43 +17,37 @@ export class TeamService {
     return this.firestore.collection<Team>('team').snapshotChanges();
   }
 
-  updateLength(name: string, task : number, length: number) {
-    var teamRef = this.firestore.collection("team").doc(name);
-    if(task == 1){
-      return teamRef.update({
+  updateLength(team: Team, task: number, length: number) {
+    const teamRef = this.firestore.collection('team').doc(team.name);
+    switch (task) {
+      case 1:
+        return teamRef.update({
           task1length: length
-      })
-    }
-    if(task == 2){
-      return teamRef.update({
-          task2length: length
-      })
-    }
-    if(task == 3){
-      return teamRef.update({
+        });
+      case 2:
+        return teamRef.update({
+        task2length: length
+        });
+      case 3:
+        return teamRef.update({
           task3length: length
-      })
-    }
-    if(task == 4){
-      return teamRef.update({
+        });
+      case 4:
+        return teamRef.update({
           task4length: length
-      })
-    }
-    if(task == 5){
-      return teamRef.update({
+        });
+      case 5:
+        return teamRef.update({
           task5length: length
-      })
-    }
-    if(task == 6){
-      return teamRef.update({
+        });
+      case 6:
+        return teamRef.update({
           task6length: length
-      })
-    }
-    if(task == 7){
-      return teamRef.update({
+        });
+      case 7:
+        return teamRef.update({
           task7length: length
-      })
+        });
     }
-    
   }
 }

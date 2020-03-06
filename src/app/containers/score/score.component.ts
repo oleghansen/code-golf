@@ -31,7 +31,7 @@ export class ScoreComponent implements OnInit {
     })
     );
 
-    this.scoreService.getAllScores().subscribe((res => {
+    /*this.scoreService.getAllScores().subscribe((res => {
       this.scores = res.map(score => {
         return {
           id: score.payload.doc.id,
@@ -39,7 +39,7 @@ export class ScoreComponent implements OnInit {
         } as Score;
       });
     })
-    );
+    );*/
   }
 
   isDarkModeEnabled() {

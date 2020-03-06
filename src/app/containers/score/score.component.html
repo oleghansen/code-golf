@@ -1,61 +1,173 @@
 <title>CG - Scoreboard</title>
 
 <div class="score-per-task-panel">
-  <h2>Score per task</h2>
+  <h2>Score per oppgave</h2>
 
   <div class="task-container">
-    <h3>Task 1</h3>
-    <div *ngFor="let team of teams | orderBy:'task1length': 'asc'">
-      {{ team.name }} : {{ team.task1length }}
-    </div>
+    <h3>Oppgave 1</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task1length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task1length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task1length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task1length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 2</h3>
-    <div *ngFor="let team of teams | orderBy:'task2length': 'asc'">
-      {{ team.name }} : {{ team.task2length }}
-    </div>
+    <h3>Oppgave 2</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task2length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task2length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task2length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task2length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 3</h3>
-    <div *ngFor="let team of teams | orderBy:'task3length': 'asc'">
-      {{ team.name }} : {{ team.task3length }}
-    </div>
+    <h3>Oppgave 3</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task3length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task3length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task3length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task3length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 4</h3>
-    <div *ngFor="let team of teams | orderBy:'task4length': 'asc'">
-      {{ team.name }} : {{ team.task4length }}
-    </div>
+    <h3>Oppgave 4</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task4length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task4length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task4length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task4length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 5</h3>
-    <div *ngFor="let team of teams | orderBy:'task5length': 'asc'">
-      {{ team.name }} : {{ team.task5length }}
-    </div>
+    <h3>Oppgave 5</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task5length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task5length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task5length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task5length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 6</h3>
-    <div *ngFor="let team of teams | orderBy:'task6length': 'asc'">
-      {{ team.name }} : {{ team.task6length }}
-    </div>
+    <h3>Oppgave 6</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task6length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task6length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task6length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task6length }}</td>
+      </tr>
+    </table>
   </div>
 
   <div class="task-container">
-    <h3>Task 7</h3>
-    <div *ngFor="let team of teams | orderBy:'task7length': 'asc'">
-      {{ team.name }} : {{ team.task7length }}
-    </div>
+    <h3>Oppgave 7</h3>
+    <table>
+      <tr>
+        <th>Fasit</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let fasit of fasits | orderBy:'task7length': 'asc'">
+        <td>{{ fasit.name }}</td>
+        <td>{{ fasit.task7length }}</td>
+      </tr>
+      <tr>
+        <th>Lag</th>
+        <th>Lengde</th>
+      </tr>
+      <tr *ngFor="let team of teams | orderBy:'task7length': 'asc'">
+        <td>{{ team.name }}</td>
+        <td>{{ team.task7length }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 
 <div *ngIf="!!scores" class="score-per-team">
   <h2>Scoreboard</h2>
-  <div *ngFor="let score of scores | orderBy:'score': 'desc'">
-    {{ score.name }} : {{ score.score }}
-  </div>
+  <table>
+    <tr>
+      <th>Lag</th>
+      <th>Poeng</th>
+    </tr>
+    <tr *ngFor="let score of scores | orderBy:'score': 'desc'">
+      <td>{{ score.name }}</td>
+      <td>{{ score.score }}</td>
+    </tr>
+  </table>
 </div>

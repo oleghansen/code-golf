@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { Team } from '../models/team.model';
 import { TeamService } from './team.service';
 import { Score } from '../models/score.model';
+import { Fasit } from '../models/fasit.model';
+import { FasitService } from './fasit.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScoreService {
   teams: Team[];
-  constructor(private teamService: TeamService) {
+  fasits: Fasit[];
+  constructor(private teamService: TeamService, private fasitService: FasitService) {
     this.teamService.getAllTeams().subscribe(res => {
       this.teams = res.map(team => {
         return {
@@ -17,10 +20,18 @@ export class ScoreService {
         } as Team;
       });
     });
+    this.fasitService.getAllFasits().subscribe(res => {
+      this.fasits = res.map(fasit => {
+        return {
+          id: fasit.payload.doc.id,
+          ...fasit.payload.doc.data()
+        } as Fasit;
+      });
+    });
   }
 
   getAllScores() {
-    if (!this.teams) {
+    if (!this.teams||!this.fasits) {
       return;
     }
 
@@ -65,6 +76,11 @@ export class ScoreService {
       if (team.task1length <= task1best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task1length<=fasit.task1length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 2
@@ -72,6 +88,11 @@ export class ScoreService {
       if (team.task2length <= task2best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task2length<=fasit.task2length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 3
@@ -79,6 +100,11 @@ export class ScoreService {
       if (team.task3length <= task3best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task3length<=fasit.task3length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 4
@@ -86,6 +112,11 @@ export class ScoreService {
       if (team.task4length <= task4best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task4length<=fasit.task4length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 5
@@ -93,6 +124,11 @@ export class ScoreService {
       if (team.task5length <= task5best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task5length<=fasit.task5length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 6
@@ -100,6 +136,11 @@ export class ScoreService {
       if (team.task6length <= task6best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task6length<=fasit.task6length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     //task 7
@@ -107,6 +148,11 @@ export class ScoreService {
       if (team.task7length <= task7best) {
         score += 1;
       }
+      this.fasits.forEach(fasit => {
+        if(team.task7length<=fasit.task7length){
+          score+=1;
+        }
+      });
       score += 1;
     }
     return new Score(score, team.name);

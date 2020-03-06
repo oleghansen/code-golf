@@ -14,6 +14,8 @@ import { RegisterScoreComponent } from './containers/register-score/register-sco
 import { OrderByPipe } from './shared/pipes/order-by.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { materialModules } from './shared/material.modules';
+import { ScoreService } from './services/score.service';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { materialModules } from './shared/material.modules';
     AngularFirestoreModule,
     BrowserAnimationsModule,
   ],
-  providers: [TeamService],
+  providers: [TeamService, ScoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

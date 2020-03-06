@@ -12,7 +12,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class RegisterScoreComponent implements OnInit {
 
   teams: Team[];
-  tasks = [1, 2, 3, 4, 5, 6];
+  tasks = [1, 2, 3, 4, 5, 6, 7];
 
   selectedTeam: string;
   selectedTask: number;

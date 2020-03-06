@@ -26,5 +26,11 @@
 <div *ngFor="let team of teams | orderBy:'task6length': 'asc'">
   {{ team.name }} : {{ team.task6length }}
 </div>
+<h3>Task 7</h3>
+<div *ngFor="let team of teams | orderBy:'task7length': 'asc'">
+  {{ team.name }} : {{ team.task7length }}
+</div>
 <h3>Score</h3>
-
+<div *ngFor="let score of scores | orderBy:'score': 'desc'">
+  {{ score.name }} : {{ score.score }}
+</div>

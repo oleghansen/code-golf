@@ -46,7 +46,12 @@ export class TeamService {
     }
     if(task == 6){
       return teamRef.update({
-          task1length: length
+          task6length: length
+      })
+    }
+    if(task == 7){
+      return teamRef.update({
+          task7length: length
       })
     }
     

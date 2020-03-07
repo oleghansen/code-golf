@@ -10,7 +10,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task1length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task1length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task1length }}</td>
       </tr>
@@ -18,7 +18,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task1length': 'asc'">
+      <tr [ngClass]="getClass(team, 1)" *ngFor="let team of teams | orderBy:'task1length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task1length }}</td>
       </tr>
@@ -32,7 +32,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task2length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task2length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task2length }}</td>
       </tr>
@@ -40,7 +40,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task2length': 'asc'">
+      <tr [ngClass]="getClass(team, 2)" *ngFor="let team of teams | orderBy:'task2length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task2length }}</td>
       </tr>
@@ -54,7 +54,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task3length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task3length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task3length }}</td>
       </tr>
@@ -62,7 +62,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task3length': 'asc'">
+      <tr [ngClass]="getClass(team, 3)" *ngFor="let team of teams | orderBy:'task3length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task3length }}</td>
       </tr>
@@ -76,7 +76,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task4length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task4length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task4length }}</td>
       </tr>
@@ -84,7 +84,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task4length': 'asc'">
+      <tr [ngClass]="getClass(team, 4)" *ngFor="let team of teams | orderBy:'task4length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task4length }}</td>
       </tr>
@@ -98,7 +98,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task5length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task5length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task5length }}</td>
       </tr>
@@ -106,7 +106,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task5length': 'asc'">
+      <tr [ngClass]="getClass(team, 5)" *ngFor="let team of teams | orderBy:'task5length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task5length }}</td>
       </tr>
@@ -120,7 +120,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task6length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task6length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task6length }}</td>
       </tr>
@@ -128,7 +128,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task6length': 'asc'">
+      <tr [ngClass]="getClass(team, 6)" *ngFor="let team of teams | orderBy:'task6length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task6length }}</td>
       </tr>
@@ -142,7 +142,7 @@
         <th>Fasit</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let fasit of fasits | orderBy:'task7length': 'asc'">
+      <tr class="fasit" *ngFor="let fasit of fasits | orderBy:'task7length': 'asc'">
         <td>{{ fasit.name }}</td>
         <td>{{ fasit.task7length }}</td>
       </tr>
@@ -150,7 +150,7 @@
         <th>Lag</th>
         <th>Lengde</th>
       </tr>
-      <tr *ngFor="let team of teams | orderBy:'task7length': 'asc'">
+      <tr [ngClass]="getClass(team, 7)" *ngFor="let team of teams | orderBy:'task7length': 'asc'">
         <td>{{ team.name }}</td>
         <td>{{ team.task7length }}</td>
       </tr>
@@ -165,7 +165,7 @@
       <th>Lag</th>
       <th>Poeng</th>
     </tr>
-    <tr *ngFor="let score of scores | orderBy:'score': 'desc'">
+    <tr [ngClass]="scoreClass(score)" *ngFor="let score of scores | orderBy:'score': 'desc'">
       <td>{{ score.name }}</td>
       <td>{{ score.score }}</td>
     </tr>
